@@ -9,6 +9,11 @@ import { EducationComponent } from './education/education.component';
 import { AboutmeComponent } from './aboutme/aboutme.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PartnersComponent } from './partners/partners.component';
+import { ModalColossusComponent } from './portfolio/modal-colossus/modal-colossus.component';
+import { ModalSafeRidePassengerComponent } from './portfolio/modal-safe-ride-passenger/modal-safe-ride-passenger.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; //Agregamos para usar los modales
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +23,23 @@ import { PartnersComponent } from './partners/partners.component';
     EducationComponent,
     AboutmeComponent,
     PortfolioComponent,
-    PartnersComponent
+    PartnersComponent,
+    ModalColossusComponent,
+    ModalSafeRidePassengerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule, //Agregamos para usar los modales
+    FormsModule
+  ],
+  //Agregamos entryComponents para llamar a los componentes de los modales
+  entryComponents:[
+    ModalColossusComponent,
+    ModalSafeRidePassengerComponent
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

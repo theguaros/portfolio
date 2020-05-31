@@ -1,0 +1,64 @@
+<div class='container-fluid' style="background: rgba(0,0,0,0.7)">  
+    <div class="form-row">
+        <div class="col-10">
+            <h4>Project Information - {{Project}}</h4>
+        </div>
+        <div class="col-2">
+            <div class="outer">
+                <div class="inner">
+                    <label class="buttonClose" (click)="activeModal.dismiss('Cross click')">Cerrar</label>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <hr>
+    <div class="form-row">
+        <div class='col-12'>  
+            <ngb-carousel>  
+                <ng-template ngbSlide>  
+                    <img class="img-carousel" src="../../../assets/Safe Ride Passenger/1. Mapa de google maps.png" alt="Delhi Metro" style="display: block; margin: auto; background-size:cover">  
+                </ng-template>  
+                <ng-template ngbSlide>  
+                    <img class="img-carousel" src="../../../assets/Safe Ride Passenger/2. Menu.png" alt="Bangalore Metro">  
+                </ng-template>  
+                <ng-template ngbSlide>  
+                    <img class="img-carousel" src="../../../assets/Safe Ride Passenger/3. Registrar una direccion.png" alt="Channai Metro">  
+                </ng-template>
+                <ng-template ngbSlide>  
+                    <img class="img-carousel" src="../../../assets/Safe Ride Passenger/4.Solicitar un translado.png" alt="Channai Metro">  
+                </ng-template>
+                <ng-template ngbSlide>  
+                    <img class="img-carousel" src="../../../assets/Safe Ride Passenger/5. Posicion actual del chofer.png" alt="Channai Metro">  
+                </ng-template>
+                <ng-template ngbSlide>  
+                    <img class="img-carousel" src="../../../assets/Safe Ride Passenger/6. Calificar al chofer, luego de realizar el traslado.png" alt="Channai Metro">  
+                </ng-template>
+                <ng-template ngbSlide>  
+                    <img class="img-carousel" src="../../../assets/Safe Ride Passenger/7. Top 5 Pasajeros.png" alt="Channai Metro">  
+                </ng-template>    
+            </ngb-carousel>  
+        </div>  
+    </div>
+    <hr style="">
+    <div class="form-row">
+      <div class="col-4">
+        <label class="title">Lenguaje</label><br>
+        <label class="description">- {{Lenguaje}}</label><img class="logo" src="../../../assets/typescript.svg" width="24" height="24"/><br/>
+        <label class="title">Framework </label><br>
+        <label class="description">- {{Framework}}</label><img class="logo" src="../../../assets/ionic4.svg" width="24" height="24"/><br/>
+      </div>
+      <div class="col-4">
+        <label class="title">Front-end</label><br>
+        <label class="description">- {{Frontend[0]}}</label><img class="logo" src="../../../assets/html5.svg" width="24" height="24"/><br>
+        <label class="description">- {{Frontend[1]}}</label><img class="logo" src="../../../assets/css-3.svg" width="24" height="24"/><br/>
+        <label class="title">Back-end </label><br>
+        <label class="description" style="margin-bottom: 16px;">- {{Backend[0]}}</label><img class="logo" src="../../../assets/java.svg" width="24" height="24"/>
+      </div>
+      <div class="col-4">
+        <label class="title">Manejador de Versiones</label><br>
+        <label class="description">- {{Manejador}}</label><img class="logo" src="../../../assets/git.svg" width="24" height="24"/><br/>
+        <label class="title">Base de datos</label><br>
+        <label class="description">- {{BD}}</label><img class="logo" src="../../../assets/postgresql.svg" width="24" height="24"/>
+      </div>
+    </div>
+  </div>  

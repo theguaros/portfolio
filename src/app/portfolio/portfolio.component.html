@@ -1,1 +1,39 @@
-<p>portfolio works!</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+
+<div class="container">
+    <div class="back">
+        <div align="center">
+            <nav>
+                <a routerLink="/home">Home</a>
+                <a routerLink="/skills">Skills</a>
+                <a routerLink="/education">Education</a>
+                <a routerLink="/aboutme">About me</a>
+                <a routerLink="/portfolio">Portfolio</a>
+                <a routerLink="/partners">Partners</a>
+            </nav>
+        </div>
+        <div class="container1 center">
+            <div class="card">
+                <h2 class="glitch" data-glitch="Colossus">Colossus</h2>
+                <br>
+                <div class="invisible" style="color: #ffffff">asdad</div>
+                <hr/>
+                <div class="card-body">
+                    <img src="assets/colossus.jpg" width="200px" height="180px">
+                </div>
+                <button type="button" (click)="openModal(1)">More information</button>
+            </div>
+            
+            <div class="card">
+                <h2 class="glitch" data-glitch="Safe Ride">Safe Ride</h2>
+                <br>
+                <div class="invisible" style="color: #ffffff">asdad</div>
+                <hr/>
+                <div class="card-body">
+                    <img src="assets/Safe Ride Passenger/lpassenger.png" width="200px" height="180px">
+                </div>
+                <button type="button" (click)="openModal(2)">More information</button>
+            </div>
+        </div>
+    </div>
+</div>
