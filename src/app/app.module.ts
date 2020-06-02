@@ -14,6 +14,7 @@ import { ModalSafeRidePassengerComponent } from './portfolio/modal-safe-ride-pas
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; //Agregamos para usar los modales
 import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     NgbModule, //Agregamos para usar los modales
-    FormsModule
+    FormsModule,
+    ChartsModule //Agregamos para usar los chart
   ],
   //Agregamos entryComponents para llamar a los componentes de los modales
   entryComponents:[

@@ -1,14 +1,149 @@
 <div class="container">
-    <div class="back">
-      <div align="center">
-        <nav>
-          <a routerLink="/home">Home</a>
-          <a routerLink="/skills">Skills</a>
-          <a routerLink="/education">Education</a>
-          <a routerLink="/aboutme">About me</a>
-          <a routerLink="/portfolio">Portfolio</a>
-          <a routerLink="/partners">Partners</a>
-        </nav>
+  <div class="back">
+    <div align="center">
+      <nav>
+        <a routerLink="/home">Home</a>
+        <a routerLink="/skills">Skills</a>
+        <a routerLink="/education">Education</a>
+        <a routerLink="/aboutme">About me</a>
+        <a routerLink="/portfolio">Portfolio</a>
+        <a routerLink="/partners">Partners</a>
+      </nav>
+    </div>
+    <div style="position:relative;width: 80%;top:22%;left:5%;display:inline-block">
+      <!-- 
+      <canvas baseChart
+        [data]="pieChartData"
+        [labels]="pieChartLabels"
+        [chartType]="pieChartType"
+        [legend]="pieChartLegend"
+        [colors]="pieChartColors"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"
+        style="width:85%; height: 80%;position:relative;top:20%;left:-18%">
+      </canvas>
+      -->
+      <canvas baseChart
+        [data]="polarAreaChartData"
+        [labels]="polarAreaChartLabels"
+        [legend]="polarAreaLegend"
+        [chartType]="polarAreaChartType"
+        [colors]="polarChartColors"
+        (chartClick)="chartClicked($event)"
+        style="width:85%; height: 80%;position:relative;top:20%;left:-18%">
+      </canvas>
+    </div>
+    <div class="skills">
+      <h1 style="position:relative;top:-5%">SKILLS</h1>
+      <!-- HTML -->
+      <div *ngIf="view == 0">
+        <h2 style="width:17%">{{skills[0].tituloSkill}}</h2>
+        <label class="subtituloProgress">{{skills[0].subtituloSkill}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="html" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+          </div>
       </div>
+      <!-- CSS -->
+      <div *ngIf="view == 1">
+        <h2 style="width:12%">{{skills[1].tituloSkill}}</h2>
+          <label class="subtituloProgress">{{skills[1].subtituloSkill[0]}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="css" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+          </div>
+          <br>
+          <label class="subtituloProgress">{{skills[1].subtituloSkill[1]}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="css" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+          </div>
+          <br>
+          <label class="subtituloProgress">{{skills[1].subtituloSkill[2]}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="css" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+          </div>
+          <br>
+          <label class="subtituloProgress">{{skills[1].subtituloSkill[3]}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="css" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+          </div>
+      </div>
+      <!-- JAVASCRIPT -->
+      <div *ngIf="view == 2">
+        <h2 style="width:35%">{{skills[2].tituloSkill}}</h2>
+        <label class="subtituloProgress">{{skills[2].subtituloSkill[0]}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="javascript" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+          </div>
+          <br>
+          <label class="subtituloProgress">{{skills[2].subtituloSkill[1]}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="javascript" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+          </div>
+          <br>
+          <label class="subtituloProgress">{{skills[2].subtituloSkill[2]}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="javascript" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+          </div>
+          <br>
+          <label class="subtituloProgress">{{skills[2].subtituloSkill[3]}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="javascript" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+          </div>
+      </div>
+      <!-- BACK-END -->
+      <div *ngIf="view == 3">
+        <h2 style="width:30%">{{skills[3].tituloSkill}}</h2>
+        <label class="subtituloProgress">{{skills[3].subtituloSkill[0]}}</label>
+        <div class="progress">
+          <div class="progress-bar" id="backend" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+        </div>
+        <br>
+        <label class="subtituloProgress">{{skills[3].subtituloSkill[1]}}</label>
+        <div class="progress">
+          <div class="progress-bar" id="backend" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+        </div>
+        <br>
+        <label class="subtituloProgress">{{skills[3].subtituloSkill[2]}}</label>
+        <div class="progress">
+          <div class="progress-bar" id="backend" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+        </div>
+        <br>
+        <label class="subtituloProgress">{{skills[3].subtituloSkill[3]}}</label>
+        <div class="progress">
+          <div class="progress-bar" id="backend" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+        </div>
+      </div>
+      <!-- CMS -->
+      <div *ngIf="view == 4">
+        <h2 style="width:13%">{{skills[4].tituloSkill}}</h2>
+        <label class="subtituloProgress">{{skills[4].subtituloSkill}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="cms" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+          </div>
+      </div>
+      <!-- OTHERS -->
+      <div *ngIf="view == 5">
+        <h2 style="width:24%">{{skills[5].tituloSkill}}</h2>
+        <label class="subtituloProgress">{{skills[5].subtituloSkill[0]}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="others" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+          </div>
+          <br>
+          <label class="subtituloProgress">{{skills[5].subtituloSkill[1]}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="others" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+          </div>
+          <br>
+          <label class="subtituloProgress">{{skills[5].subtituloSkill[2]}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="others" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+          </div>
+          <br>
+          <label class="subtituloProgress">{{skills[5].subtituloSkill[3]}}</label>
+          <div class="progress">
+            <div class="progress-bar" id="others" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+          </div>
+      </div>
+    </div>
+    <div>
     </div>
   </div>
