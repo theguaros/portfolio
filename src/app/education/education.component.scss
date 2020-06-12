@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.back{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/fondoatrascolor.png');
+  //background:url(https://cdn.pixabay.com/photo/2016/03/26/13/09/cup-of-coffee-1280537_960_720.jpg) no-repeat top center;
+  //background:url(https://pp.userapi.com/c841122/v841122831/327e/nHt-92F6yc4.jpg) no-repeat top center #efeff1;
+  background-size:cover;
+}
+.thx{
+  position: fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom: 15px;
+}
+nav{
+  width: 100%;
+  position: fixed;
+  top:3%;
+  text-align:center;
+}
+nav a{
+  font-family: 'Righteous', cursive;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:#16151b;
+  margin:0 15px;
+  font-size:1.5em;
+  letter-spacing:1px;
+  display:inline-block;
+  top: 35%;
+  right: 70%;
+  transform: translate(50%, -50%);
+  font-weight: 700;
+  color: #f6f6f6;
+  text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191, 1px 4px 1px #919191, 1px 5px 1px #919191, 1px 6px 1px #919191, 1px 7px 1px #919191, 1px 8px 1px #919191, 1px 9px 1px #919191, 1px 10px 1px #919191, 1px 18px 6px rgba(16, 16, 16, 0.4), 1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2), 1px 30px 60px rgba(16, 16, 16, 0.4);
+}
+nav a:before{
+  content:'';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background:#ffc412;
+  top:47%;
+  animation:out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+nav a:hover:before{
+  animation:in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+
+}
+@keyframes in{
+  0%{
+    width: 0;
+    left:0;
+    right:auto;
+  }
+  100%{
+    left:0;
+    right:auto;
+    width: 100%;
+  }
+}
+@keyframes out{
+  0%{
+    width:100%;
+    left: auto;
+    right: 0;
+  }
+  100%{
+    width: 0;
+    left: auto;
+    right: 0;
+  }
+}
+@keyframes show{
+  0%{
+    opacity:0;
+    transform:translateY(-10px);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@for $i from 1 through 7 {
+  nav a:nth-child(#{$i}){
+    animation:show .2s #{$i*0.1+1}s ease 1 both;
+  }
+}
+
+
+/*---------------------  LINEA DE TIEMPO -----------------*/
+
+// Variables
+$bg-body: #f9f9f9;
+
+//$red: #ee4d4d;
+$red: #ee914d;
+$blue: #2b2e48;
+$primary-color: $red;
+$secondary-color: $blue;
+
+
+// Typography
+$base-font: helvetica, arial, tahoma, verdana;
+$base-font-title: "Dosis", arial, tahoma, verdana;
+
+$base-font-color: #726f77;
+
+// Timeline
+$timeline-color: $primary-color;
+
+
+// Mixins and Placeholders
+%clearfix {
+	&:after, &:before {
+		content: '';
+		display: block;
+		width: 100%;
+		clear: both;
+	}
+}
+
+@mixin prefix($prop, $val) {
+	@each $prefix in '-webkit-', '-moz-', '-ms-', '' {
+		#{$prefix}#{$prop}: $val;
+	}
+}
+*, *:before, *:after {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+}
+body {
+	background: $bg-body;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	font-family: $base-font;
+	line-height: 20px;
+	font-size: 14px;
+	color: $base-font-color;
+}
+
+img {max-width: 100%;}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+  font-family: $base-font-title;
+	font-weight: 500;
+}
+
+.project-name {
+  text-align: center;
+  padding: 10px 0;
+}
+
+// Header
+header {	
+	background: $secondary-color;
+	padding: 10px;
+	@include prefix(box-shadow, 0 3px 3px rgba(0,0,0,0.05)); 
+	@extend %clearfix;
+
+	.logo {
+		color: $primary-color;
+		float: left;
+		font-family: $base-font-title;
+    font-size: 22px;
+    font-weight: 500;
+		
+		
+		> span {
+			color: lighten($primary-color, 20%);
+			font-weight: 300;
+		}
+	}
+
+	.social {
+		float: right;
+		.btn {
+			font-family: "Dosis";
+			font-size: 14px;
+			margin: 10px 5px;
+		}
+	}
+}
+
+
+// Timeline
+#timeline {
+	width: 100%;
+  margin: 30px auto;
+	position: relative;
+  padding-right:10px;
+	@include prefix(transition, all .4s ease);
+
+	&:before {
+		content:"";
+		width: 3px;
+		height: 100%;
+		background: $timeline-color;
+		left: 16%;
+		top: 0;
+		position: absolute;
+	}
+
+	&:after {
+		content: "";
+		clear: both;
+		display: table;
+		width: 100%;
+	}
+	
+	.timeline-item {
+		//margin-bottom: 50px;
+		position: relative;
+		@extend %clearfix;
+
+		.timeline-icon {
+			background: $timeline-color;
+			width: 50px;
+			height: 50px;
+			position: relative;
+			top: 0;
+			left: 16%;
+			overflow: hidden;
+			margin-left: -23px;
+			@include prefix(border-radius, 50%);
+
+			svg {
+				position: relative;
+				top: 14px;
+				left: 14px;
+			}
+		}
+
+
+	}
+}
+h2, p{
+    font-family: 'Righteous', cursive;
+    //font-size:1.5em;
+}
+p{
+    letter-spacing: 0px;
+}
+.timeline-content {
+    width: 50%;
+    background: #fff;
+    padding: 20px;
+    @include prefix(box-shadow, 0 3px 0 rgba(0,0,0,0.1));
+    @include prefix(border-radius, 5px);
+    @include prefix(transition, all .3s ease);
+
+    h2 {
+        padding: 12px;
+        background: $timeline-color;
+        color: #fff;
+        margin: -20px -20px 0 -20px;
+        font-weight: 300;
+        @include prefix(border-radius, 3px 3px 0 0);
+    }
+
+    &:before {
+        content: '';
+        position: relative;
+        left: 45%;
+        top: 20px;
+        width: 0; 
+        height: 0; 
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent; 
+        border-left:7px solid $timeline-color; 
+    }
+
+    &.right {
+        //float: right;
+        left: 32%;
+        position: relative;
+        top: -450px;
+
+        &:before {
+            content: '';
+            right: 45%;
+            left: inherit;
+            border-left: 0;
+            //border-right: 7px solid $timeline-color;
+        }
+    }
+}
+
+// Buttons
+.btn {
+	padding: 5px 15px;
+	text-decoration: none;
+	background: transparent;
+	border: 2px solid lighten($primary-color, 10%);
+	color: lighten($primary-color, 10%);
+	display: inline-block;
+	position: relative;
+	text-transform: uppercase;
+	font-size: 12px;
+	@include prefix(border-radius, 5px);
+	@include prefix(transition, background .3s ease);
+	@include prefix(box-shadow, 2px 2px 0 lighten($primary-color, 10%));
+
+	&:hover {
+		box-shadow: none ;
+		top: 2px;
+		left: 2px;
+		@include prefix(box-shadow, 2px 2px 0 transparent);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#timeline {
+		margin: 30px;
+		padding: 0px;
+    width: 90%;
+		&:before {
+			left: 0;
+		}
+		
+		.timeline-item {
+			.timeline-content {
+				width: 90%;
+				float: right;
+				
+				&:before, &.right:before {
+					left: 10%;
+					margin-left: -6px;
+					border-left: 0;
+					border-right: 7px solid $timeline-color;
+				}
+			}
+
+			.timeline-icon {
+				left: 0;
+			}
+		}
+	}
+}
