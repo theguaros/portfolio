@@ -295,7 +295,7 @@ p{
         //float: right;
         left: 32%;
         position: relative;
-        top: -450px;
+        top: -275px;
 
         &:before {
             content: '';
@@ -333,6 +333,7 @@ p{
 @media screen and (max-width: 768px) {
 	#timeline {
 		margin: 30px;
+		margin-top: 60px;
 		padding: 0px;
     width: 90%;
 		&:before {
